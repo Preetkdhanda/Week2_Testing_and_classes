@@ -38,7 +38,7 @@ class TestRoom(unittest.TestCase):
         self.room.add_guest_to_room_with_capacity(self.guest1)
         self.room.add_guest_to_room_with_capacity(self.guest2)
         self.room.add_guest_to_room_with_capacity(self.guest3)
-        self.assertEqual("Room is full", self.room.add_guest_to_room_with_capacity(self.guest3))
+        self.assertEqual(3,len(self.room.guest))
 
     def test_checking_if_room_can_take_capacity(self):
         self.room.add_guest_to_room_with_capacity(self.guest)
