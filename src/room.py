@@ -1,7 +1,12 @@
+from email import feedparser
+
+
 class Room:
-    def __init__(self, name, capacity):
+    def __init__(self, name, capacity, fee, till    ):
         self.name = name
         self.capacity = capacity
+        self.fee = fee
+        self.till = till
         self.guest = []
         self.song = []
 
@@ -23,7 +28,15 @@ class Room:
         if self.capacity > len(self.guest):
          self.guest.append(guest)
        
+    def check_if_guest_can_afford_fee(self, guest, fee):
+        if guest.wallet < fee :
+            return
+        else:
+             guest.wallet -= fee
+             self.till += fee
 
+
+    
     
         
 
